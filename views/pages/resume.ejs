@@ -1,0 +1,345 @@
+<%- include('../template/header') -%>
+<!-- Wrapper -->
+<div class="wrapper">
+
+    <!-- Section Started -->
+    <div class="section started section-title" id="section-started">
+
+        <!-- background -->
+        <div class="video-bg">
+            <div class="video-bg-mask"></div>
+            <div class="video-bg-texture" id="grained_container"></div>
+        </div>
+
+        <!-- started content -->
+        <div class="centrize full-width">
+            <div class="vertical-center">
+                <div class="started-content">
+                    <h1 class="h-title"><%- header.nav.resume %></h1>
+                    <div class="h-subtitles">
+                        <div class="h-subtitle typing-bread">
+                            <p class="breadcrumbs">
+                                <a href="/"><%- header.nav.home %></a> / <%- header.nav.resume %>
+                            </p>
+                        </div>
+                        <span class="typed-bread"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- mosue button -->
+        <a href="#" class="mouse_btn" style="display: none;"><span class="icon fas fa-chevron-down"></span></a>
+
+    </div>
+
+    <!-- Section About -->
+    <div class="section about" id="section-about">
+        <div class="content content-box">
+
+            <!-- image -->
+            <div class="image">
+                <img src="../images/me.jpg" alt="Profile picture of me">
+            </div>
+
+            <!-- desc -->
+            <div class="desc">
+                <p><%- lang.desc.about %></p>
+                <div class="info-list">
+                    <ul>
+                        <li><strong><%- lang.desc.info.age.title %>:</strong> <%- lang.desc.info.age.text %></li>
+                        <li><strong><%- lang.desc.info.residence.title %>:</strong> <%- lang.desc.info.residence.text %></li>
+                        <li><strong><%- lang.desc.info.freelance.title %>:</strong> <%- lang.desc.info.freelance.text %></li>
+                        <li><strong><%- lang.desc.info.address.title %>:</strong> <%- lang.desc.info.address.text %></li>
+                        <li><strong><%- lang.desc.info.email.title %>:</strong> <%- lang.desc.info.email.text %></li>
+                    </ul>
+                </div>
+                <div class="bts">
+                    <a href="#" class="btn hover-animated">
+                        <span class="circle"></span>
+                        <span class="lnk"><%- header.download %> CV</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Section Service -->
+    <div class="section service" id="section-services">
+        <div class="content">
+
+            <!-- title -->
+            <div class="title">
+                <div class="title_inner"><%- lang.services.title %></div>
+            </div>
+
+            <!-- service items -->
+            <div class="service-items">
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-code"></span></div>
+                        <div class="name"><%- lang.services.service.webdev.title %></div>
+                        <div class="text"><%- lang.services.service.webdev.text %></div>
+                    </div>
+                </div>
+                
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-chart-line"></span></div>
+                        <div class="name"><%- lang.services.service.seo.title %></div>
+                        <div class="text"><%- lang.services.service.seo.text %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-copyright"></span></div>
+                        <div class="name"><%- lang.services.service.advertising.title %></div>
+                        <div class="text"><%- lang.services.service.advertising.text %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-gamepad"></span></div>
+                        <div class="name"><%- lang.services.service.gamedev.title %></div>
+                        <div class="text"><%- lang.services.service.gamedev.text %></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Section Resume -->
+    <div class="section resume" id="section-history">
+        <div class="content">
+            <div class="cols">
+
+                <div class="col col-md">
+
+                    <!-- title -->
+                    <div class="title">
+                        <div class="title_inner"><%- lang.experiences.title %></div>
+                    </div>
+                    
+                    <!-- resume items -->
+                    <div class="resume-items">
+                        
+                        <div class="resume-item content-box active">
+                            <div class="date"><%- lang.experiences.experience.freelance.time %></div>
+                            <div class="name"><%- lang.experiences.experience.freelance.title %></div>
+                            <div class="text"><%- lang.experiences.experience.freelance.text %></div>
+                        </div>
+
+                        <div class="resume-item content-box">
+                            <div class="date"><%- lang.experiences.experience.lecturer.time %></div>
+                            <div class="name"><%- lang.experiences.experience.lecturer.title %></div>
+                            <div class="text"><%- lang.experiences.experience.lecturer.text %></div>
+                        </div>
+
+                        <div class="resume-item content-box">
+                            <div class="date"><%- lang.experiences.experience.riptide.time %></div>
+                            <div class="name"><%- lang.experiences.experience.riptide.title %></div>
+                            <div class="text"><%- lang.experiences.experience.riptide.text %></div>
+                        </div>
+
+                        <div class="resume-item content-box">
+                            <div class="date"><%- lang.experiences.experience.hogia.time %></div>
+                            <div class="name"><%- lang.experiences.experience.hogia.title %></div>
+                            <div class="text"><%- lang.experiences.experience.hogia.text %></div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+                <div class="col col-md">
+
+                    <!-- title -->
+                    <div class="title">
+                        <div class="title_inner"><%- lang.education.title %></div>
+                    </div>
+                    
+                    <!-- resume items -->
+                    <div class="resume-items">
+
+                        <div class="resume-item content-box active">
+                            <div class="date"><%- lang.education.education.iths.time %></div>
+                            <div class="name"><%- lang.education.education.iths.title %></div>
+                            <div class="text"><%- lang.education.education.iths.text %></div>
+                        </div>
+
+                        <div class="resume-item content-box">
+                            <div class="date"><%- lang.education.education.thoren.time %></div>
+                            <div class="name"><%- lang.education.education.thoren.title %></div>
+                            <div class="text"><%- lang.education.education.thoren.text %></div>
+                        </div>
+
+                        <div class="resume-item content-box">
+                            <div class="date"><%- lang.education.education.dmacc.time %></div>
+                            <div class="name"><%- lang.education.education.dmacc.title %></div>
+                            <div class="text"><%- lang.education.education.dmacc.text %></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Languages Skills -->
+    <div class="section skills" id="section-skills-lang">
+        <div class="content">
+
+            <!-- title -->
+            <div class="title">
+                <div class="title_inner"><%- lang.languages.title %></div>
+            </div>
+
+            <!-- skills items -->
+            <div class="skills dotted content-box">
+                <ul>
+                    <li> 
+                        <div class="name"><%- lang.languages.language.swedish.title %></div>
+                        <div class="progress">
+                            <div class="percentage" <%= 'style=width:' + lang.languages.language.swedish.percent + '\%;"' %>>
+                                <span class="percent"><%- lang.languages.language.swedish.percent %>%</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="name"><%- lang.languages.language.english.title %></div>
+                        <div class="progress">
+                            <div class="percentage" <%= 'style=width:' + lang.languages.language.english.percent + '\%;"' %>>
+                                <span class="percent"><%- lang.languages.language.english.title %>%</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section Coding Skills -->
+    <div class="section skills" id="section-skills-code">
+        <div class="content">
+            
+            <!-- title -->
+            <div class="title">
+                <div class="title_inner"><%- lang.skills.title %></div>
+            </div>
+
+            <!-- skills items -->
+            <div class="skills circles content-box">
+                <ul>
+                    <li> 
+                        <div class="name"><%- lang.skills.skill.html.title %></div>
+                        <div class="progress p<%- lang.skills.skill.html.percent %>">
+                            <div class="percentage">
+                                <span class="percent"><%- lang.skills.skill.html.percent %>%</span>
+                            </div>
+                            <span><%- lang.skills.skill.html.percent %>%</span>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="name"><%- lang.skills.skill.php.title %></div>
+                        <div class="progress p<%- lang.skills.skill.php.percent %>">
+                            <div class="percentage">
+                                <span class="percent"><%- lang.skills.skill.php.percent %>%</span>
+                            </div>
+                            <span><%- lang.skills.skill.php.percent %>%</span>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="name"><%- lang.skills.skill.javascript.title %></div>
+                        <div class="progress p<%- lang.skills.skill.javascript.percent %>">
+                            <div class="percentage">
+                                <span class="percent"><%- lang.skills.skill.javascript.percent %>%</span>
+                            </div>
+                            <span><%- lang.skills.skill.javascript.percent %>%</span>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="name"><%- lang.skills.skill.java.title %></div>
+                        <div class="progress p<%- lang.skills.skill.java.percent %>">
+                            <div class="percentage">
+                                <span class="percent"><%- lang.skills.skill.java.percent %>%</span>
+                            </div>
+                            <span><%- lang.skills.skill.java.percent %>%</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Section Interests -->
+    <div class="section service" id="section-interests">
+        <div class="content">
+
+            <!-- title -->
+            <div class="title">
+                <div class="title_inner"><%- lang.interests.title %></div>
+            </div>
+
+            <!-- interests items -->
+            <div class="service-items">
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-football-ball"></span></div>
+                        <div class="name"><%- lang.interests.interests.football %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-vihara"></span></div>
+                        <div class="name"><%- lang.interests.interests.architecture %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-chess-knight"></span></div>
+                        <div class="name"><%- lang.interests.interests.chess %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-hiking"></span></div>
+                        <div class="name"><%- lang.interests.interests.hiking %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-gamepad"></span></div>
+                        <div class="name"><%- lang.interests.interests.gaming %></div>
+                    </div>
+                </div>
+
+                <div class="service-col">
+                    <div class="service-item content-box">
+                        <div class="icon"><span class="fad fa-chair"></span></div>
+                        <div class="name"><%- lang.interests.interests.interiordesign %></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<%- include('../template/footer') -%>

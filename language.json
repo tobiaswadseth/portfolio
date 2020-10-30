@@ -1,0 +1,371 @@
+{
+    "en": {
+        "header": {
+            "download": "Download",
+            "nav": {
+                "home": "Home",
+                "resume": "Resume",
+                "works": "Works",
+                "contact": "Contact"
+            }
+        },
+        "footer": {
+            "follow_label": "Follow Me"
+        },
+        "index": {
+            "title": "Hello, I’m <strong>Tobias Wadseth</strong>, Java Developer <br>Based in Gothenburg.",
+            "typing_subtitle": "<p>I code cool <strong>websites</strong></p><p>I develop <strong>bungeecord plugins</strong></p><p>I develop <strong>spigot plugins</strong></p>"
+        },
+        "resume": {
+            "desc": {
+                "about": "Hello! I’m Tobias. A software student from Gothenburg, Sweden. I'm experienced in web design and game development. I would love to work with you.",
+                "info": {
+                    "age": {
+                        "title": "Age",
+                        "text": "20"
+                    },
+                    "residence": {
+                        "title": "Residence",
+                        "text": "Sweden"
+                    },
+                    "freelance": {
+                        "title": "Freelance",
+                        "text": "Available"
+                    },
+                    "address": {
+                        "title": "Address",
+                        "text": "Gothenburg"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "text": "twadseth (at) icloud.com"
+                    }
+                }
+            },
+            "services": {
+                "title": "Services",
+                "service": {
+                    "webdev": {
+                        "title": "Web Development",
+                        "text": "Modern and mobile-ready websites that will help you reach all of your marketing goals."
+                    },
+                    "seo": {
+                        "title": "SEO",
+                        "text": "Pushing your website the the top of the search engines without you having to worry."
+                    },
+                    "advertising": {
+                        "title": "Advertising",
+                        "text": "Advertise your brand to a ton of new potential customers bringing traffic to your website."
+                    },
+                    "gamedev": {
+                        "title": "Game Development",
+                        "text": "Developing memorable and unique games."
+                    }
+                }
+            },
+            "experiences": {
+                "title": "Experience",
+                "experience": {
+                    "freelance": {
+                        "time": "2019 - Present",
+                        "title": "Freelancer",
+                        "text": "Doing freelance work, focusing on game development and web design."
+                    },
+                    "lecturer": {
+                        "time": "2019 - 2019",
+                        "title": "Lecturer",
+                        "text": "Lectured elementary school students on the world of game development through my own graphic programming language, MineCode, and Microsoft's MakeCode."
+                    },
+                    "riptide": {
+                        "time": "2016 - 2017",
+                        "title": "CEO & Lead Developer - Riptide Productions UF",
+                        "text": "For a class in school I ran a successful business for a year focusing on web design."
+                    },
+                    "hogia": {
+                        "time": "2015 - 2015",
+                        "title": "Internship - Hogia AB",
+                        "text": "Interned at Hogia AB where I worked with web design."
+                    }
+                }
+            },
+            "education": {
+                "title": "Education",
+                "education": {
+                    "iths": {
+                        "time": "2020 - Present",
+                        "title": "Java Development - IT-Högskolan",
+                        "text": "Coursework - Java, JavaFX, Databases, Git, SQL, and Web Development."
+                    },
+                    "thoren": {
+                        "time": "2016 - 2020",
+                        "title": "Technology - Thoren Innovation School",
+                        "text": "General \"Gymnasieutbildning\" with focus on java development, web development, and web design."
+                    },
+                    "dmacc": {
+                        "time": "2017 - 2018",
+                        "title": "Programming - Des Moines Area Community College",
+                        "text": "Coursework - Git, WordPress, Javascript, iOS, Android, CSS, and JavaScript."
+                    }
+                }
+            },
+            "languages": {
+                "title": "Language Skills",
+                "language": {
+                    "swedish": {
+                        "title": "Swedish",
+                        "percent": "100"
+                    },
+                    "english": {
+                        "title": "English",
+                        "percent": "90"
+                    }
+                }
+            },
+            "skills": {
+                "title": "Skills",
+                "skill": {
+                    "html": {
+                        "title": "HTML",
+                        "percent": "90"
+                    },
+                    "php": {
+                        "title": "PHP & MySQL",
+                        "percent": "75"
+                    },
+                    "javascript": {
+                        "title": "Angular / Javascript",
+                        "percent": "85"
+                    },
+                    "java": {
+                        "title": "Java",
+                        "percent": "95"
+                    }
+                }
+            },
+            "interests": {
+                "title": "Interests",
+                "interests": {
+                    "football": "Football",
+                    "architecture": "Architecture",
+                    "chess": "Chess",
+                    "hiking": "Hiking",
+                    "gaming": "Gaming",
+                    "interiordesign": "Interior Design"
+                }
+            }
+        },
+        "works": {
+        },
+        "contact": {
+            "sectiontitle": "Contact Info",
+            "email": {
+                "title": "Email",
+                "text": "twadseth (at) icloud.com"
+            },
+            "address": {
+                "title": "Address",
+                "text": "Gothenburg, Sweden"
+            },
+            "availability": {
+                "title": "Availability",
+                "text": "I am available for hire!"
+            }
+        },
+        "404": {
+            "title": "Page Not Found",
+            "breadcrumb": "404"
+        },
+        "500": {
+            "title": "Internal Server Error",
+            "breadcrumb": "500"
+        }
+    },
+    "se": {
+        "header": {
+            "download": "Ladda ned",
+            "nav": {
+                "home": "Hem",
+                "resume": "CV",
+                "works": "Projekt",
+                "contact": "Kontakt"
+            }
+        },
+        "footer": {
+            "follow_label": "Följ Mig"
+        },
+        "index": {
+            "title": "Hej, Jag är <strong>Tobias Wadseth</strong>, en Java Utvecklare <br>Baserad i Göteborg.",
+            "typing_subtitle": "<p>Jag kodar coola <strong>webbplatser</strong></p><p>Jag utvecklar <strong>bungeecord plugins</strong></p><p>Jag utvecklar <strong>spigot plugins</strong></p>"
+        },
+        "resume": {
+            "desc": {
+                "about": "Hej! Jag är Tobias. En programmerings student från Göteborg, Sverige. Jag är erfaren i webbdesign och spelutveckling. Jag skulle gärna vilja arbeta med dig.",
+                "info": {
+                    "age": {
+                        "title": "Ålder",
+                        "text": "20"
+                    },
+                    "residence": {
+                        "title": "Residens",
+                        "text": "Sverige"
+                    },
+                    "freelance": {
+                        "title": "Frilans",
+                        "text": "Tillgänglig"
+                    },
+                    "address": {
+                        "title": "Adress",
+                        "text": "Göteborg"
+                    },
+                    "email": {
+                        "title": "Emejl",
+                        "text": "twadseth (at) icloud.com"
+                    }
+                }
+            },
+            "services": {
+                "title": "Tjänster",
+                "service": {
+                    "webdev": {
+                        "title": "Webbutveckling",
+                        "text": "Moderna och mobilklara webbplatser som hjälper dig att nå all din marknadsföringsmål."
+                    },
+                    "seo": {
+                        "title": "SEO",
+                        "text": "Placera din webbplats högst upp på sökmotorerna utan att du behöver oroa dig."
+                    },
+                    "advertising": {
+                        "title": "Annonsering",
+                        "text": "Annonsera ditt varumärke för massor av nya potentiella kunder som bringar trafik till din webbplats."
+                    },
+                    "gamedev": {
+                        "title": "Spelutveckling",
+                        "text": "Utvecklar minnesvärda och unika spel."
+                    }
+                }
+            },
+            "experiences": {
+                "title": "Erfarenhet",
+                "experience": {
+                    "freelance": {
+                        "active": true,
+                        "time": "2019 - Nutid",
+                        "title": "Frilans",
+                        "text": "Gör frilansarbete med fokus på spelutveckling och webbdesign."
+                    },
+                    "lecturer": {
+                        "active": false,
+                        "time": "2019 - 2019",
+                        "title": "Föreläsare",
+                        "text": "Föreläste för grundskolelever om spelutvecklingsvärlden genom mitt egna grafiska programmeringsspråk, MineCode, och Microsofts MakeCode."
+                    },
+                    "riptide": {
+                        "active": false,
+                        "time": "2016 - 2017",
+                        "title": "CEO & Ledande Utvecklare - Riptide Productions UF",
+                        "text": "För en klass under gymnasiet drev jag ett framgångsrikt företag i ett år med fokus på webbdesign."
+                    },
+                    "hogia": {
+                        "active": false,
+                        "time": "2015 - 2015",
+                        "title": "Praktik - Hogia AB",
+                        "text": "Praktiserade på Hogia AB där jag arbetade med webbdesign."
+                    }
+                }
+            },
+            "education": {
+                "title": "Utbildning",
+                "education": {
+                    "iths": {
+                        "active": true,
+                        "time": "2020 - Nutid",
+                        "title": "Java Utveckling - IT-Högskolan",
+                        "text": "Kurser - Java, JavaFX, Databaser, Git, SQL och Webbutveckling."
+                    },
+                    "thoren": {
+                        "active": false,
+                        "time": "2016 - 2020",
+                        "title": "Teknik - Thoren Innovation School",
+                        "text": "Teknikinriktning med fokus på programmering, webbutveckling och webbdesign."
+                    },
+                    "dmacc": {
+                        "active": false,
+                        "time": "2017 - 2018",
+                        "title": "Programmering - Des Moines Area Community College",
+                        "text": "Kurser - Git, WordPress, Javascript, iOS, Android och CSS."
+                    }
+                }
+            },
+            "languages": {
+                "title": "Språkkunskaper",
+                "language": {
+                    "swedish": {
+                        "title": "Svenska",
+                        "percent": "100"
+                    },
+                    "english": {
+                        "title": "Engelska",
+                        "percent": "90"
+                    }
+                }
+            },
+            "skills": {
+                "title": "Kunskaper",
+                "skill": {
+                    "html": {
+                        "title": "HTML",
+                        "percent": "90"
+                    },
+                    "php": {
+                        "title": "PHP & MySQL",
+                        "percent": "75"
+                    },
+                    "javascript": {
+                        "title": "Angular / Javascript",
+                        "percent": "85"
+                    },
+                    "java": {
+                        "title": "Java",
+                        "percent": "95"
+                    }
+                }
+            },
+            "interests": {
+                "title": "Inressen",
+                "interests": {
+                    "football": "Amerikansk Fotboll",
+                    "architecture": "Arkitektur",
+                    "chess": "Schack",
+                    "hiking": "Vandring",
+                    "gaming": "Spel",
+                    "interiordesign": "Inredningsdesign"
+                }
+            }
+        },
+        "works": {
+        },
+        "contact": {
+            "sectiontitle": "Kontakt Info",
+            "email": {
+                "title": "Emejl",
+                "text": "twadseth (at) icloud.com"
+            },
+            "address": {
+                "title": "Adress",
+                "text": "Göteborg, Sverige"
+            },
+            "availability": {
+                "title": "Tillgänglighet",
+                "text": "Jag är tillgänglig för jobb!"
+            }
+        },
+        "404": {
+            "title": "Sidan Hittades Inte",
+            "breadcrumb": "404"
+        },
+        "500": {
+            "title": "Internt Serverfel",
+            "breadcrumb": "500"
+        }
+    }
+}

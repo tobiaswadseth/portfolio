@@ -1,0 +1,36 @@
+        <!-- Footer -->
+		<footer class="footer">
+			<div class="lang">
+                <% if (activeLang == 'se') { %>
+                    <p class="lang-selector"><a href="/en">En</a> / Se</p>
+                <% } else { %>
+                    <p class="lang-selector">En / <a href="/se">Se</a></p>
+                <% } %>
+			</div>
+			<div class="soc-box">
+				<div class="follow-label"><%- footer.follow_label %></div>
+				<div class="soc">
+					<a target="_blank" href="https://www.github.com/tobiaswadseth">
+						<span class="icon fab fa-github"></span>
+					</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</footer>
+
+		<!-- Lines -->
+		<div class="lines">
+			<div class="line-col"></div>
+			<div class="line-col"></div>
+			<div class="line-col"></div>
+			<div class="line-col"></div>
+			<div class="line-col"></div>
+		</div>
+		
+	</div>
+
+	<script src="../js/vendor.min.js"></script>
+	<script src="../js/scripts.min.js"></script>
+
+</body>
+</html>
