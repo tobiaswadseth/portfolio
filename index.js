@@ -60,6 +60,16 @@ app.get('/works', (req, res) => {
                 title_en: "Spigot Plugins",
                 title_se: "Spigot Plugins",
                 value: "spigot"
+            },
+            java: {
+                title_en: "Java",
+                title_se: "Java",
+                value: "java"
+            },
+            javascript: {
+                title_en: "Javascript",
+                title_se: "Javascript",
+                value: "javascript"
             }
         },
         projects: [
@@ -69,7 +79,7 @@ app.get('/works', (req, res) => {
                 image: "images/backpack.jpg",
                 sourcecode: "https://www.spigotmc.org/resources/backpacks.80583",
                 projectpath: "",
-                category: ["spigot"],
+                category: ["spigot", "java"],
                 en: {
                     description: ""
                 },
@@ -83,7 +93,7 @@ app.get('/works', (req, res) => {
                 image: "images/link.jpg",
                 sourcecode: "https://www.spigotmc.org/resources/chatlink.74046",
                 projectpath: "",
-                category: ["spigot"],
+                category: ["spigot", "java"],
                 en: {
                     description: ""
                 },
@@ -97,7 +107,7 @@ app.get('/works', (req, res) => {
                 image: "images/trash.jpg",
                 sourcecode: "https://www.spigotmc.org/resources/clearentities.80272",
                 projectpath: "",
-                category: ["spigot"],
+                category: ["spigot", "java"],
                 en: {
                     description: ""
                 },
@@ -109,9 +119,9 @@ app.get('/works', (req, res) => {
                 id: "bitcoin",
                 title: "Bitcoin Clicker",
                 image: "images/bitcoin.jpg",
-                sourcecode: "https://github.com/tobiaswadseth/bitcoin-clicker/tree/main",
+                sourcecode: "https://github.com/tobiaswadseth/bitcoin-clicker",
                 projectpath: "/projects/bitcoin-clicker",
-                category: ["web"],
+                category: ["web", "javascript"],
                 en: {
                     description: ""
                 },
@@ -123,9 +133,51 @@ app.get('/works', (req, res) => {
                 id: "wu1-final",
                 title: "Webbutveckling 1 Final Project",
                 image: "images/wu1-final.jpg",
-                sourcecode: "https://github.com/tobiaswadseth/wu1_towa/tree/master",
+                sourcecode: "https://github.com/tobiaswadseth/wu1_towa",
                 projectpath: "/projects/wu1-final",
                 category: ["web"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "url-shortener",
+                title: "URL Shortener",
+                image: "images/shortener.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/url-shortener",
+                projectpath: "",
+                category: ["web", "javascript"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "wysiwyg",
+                title: "WYSIWYG Editor",
+                image: "images/wysiwyg.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/wysiwyg-editor",
+                projectpath: "",
+                category: ["web", "javascript"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "movie-tickets",
+                title: "Movie Ticket Booking App",
+                image: "images/tickets.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/movie-tickets",
+                projectpath: "",
+                category: ["java"],
                 en: {
                     description: ""
                 },
@@ -147,6 +199,10 @@ app.get('/contact', (req, res) => {
         page: 'contact'
     });
 });
+
+app.get('/download-cv', (req, res) => {
+    res.download(path.join(__dirname, '/CV.pdf'));
+}); 
 
 app.get('/se', (req, res) => {
     res.cookie('lang', 'se', { expire: (2592 * (10^6)) + Date.now() });

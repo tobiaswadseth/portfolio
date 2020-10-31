@@ -88,13 +88,13 @@
                                         <p><%= project[activeLang].description %></p>
                                     <% } %>
                                     <% if (project.projectpath !== "") { %>
-                                        <a class="btn hover-animated" href="<%= project.projectpath %>">
+                                        <a class="btn hover-animated" href="<%= project.projectpath %>" target="_blank">
                                             <span class="circle"></span>
                                             <span class="lnk"><%= lang.viewproject %></span>
                                         </a>
                                     <% } %>
                                     <% if (project.sourcecode !== "") { %>
-                                        <a class="btn hover-animated" href="<%= project.sourcecode %>">
+                                        <a class="btn hover-animated" href="<%= project.sourcecode %>" target="_blank">
                                             <span class="circle"></span>
                                             <span class="lnk"><%= lang.viewcode %></span>
                                         </a>
