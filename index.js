@@ -185,6 +185,20 @@ app.get('/works', (req, res) => {
                     description: ""
                 }
             },
+            {
+                id: "chat-room",
+                title: "Chat Room",
+                image: "images/chatroom.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/chat-room",
+                projectpath: "",
+                category: ["web", "javascript"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
         ]
     });
 });
