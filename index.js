@@ -41,9 +41,95 @@ app.get('/works', (req, res) => {
         header: langFile[lang].header,
         footer: langFile[lang].footer,
         page: 'works',
-        projects: {
-
-        }
+        projectcategories: {
+            'box-item': {
+                title_en: "All",
+                title_se: "Alla",
+                value: "box-item"
+            },
+            web: {
+                title_en: "Web Development",
+                title_se: "Webbutveckling",
+                value: "web"
+            },
+            spigot: {
+                title_en: "Spigot Plugins",
+                title_se: "Spigot Plugins",
+                value: "spigot"
+            }
+        },
+        projects: [
+            {
+                id: "backpacks",
+                title: "Backpacks",
+                image: "images/backpack.jpg",
+                sourcecode: "https://www.spigotmc.org/resources/backpacks.80583",
+                projectpath: "",
+                category: ["spigot"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "chatlink",
+                title: "ChatLink",
+                image: "images/link.jpg",
+                sourcecode: "https://www.spigotmc.org/resources/chatlink.74046",
+                projectpath: "",
+                category: ["spigot"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "clearentities",
+                title: "ClearEntities",
+                image: "images/trash.jpg",
+                sourcecode: "https://www.spigotmc.org/resources/clearentities.80272",
+                projectpath: "",
+                category: ["spigot"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "bitcoin",
+                title: "Bitcoin Clicker",
+                image: "images/bitcoin.jpg",
+                sourcecode: "",
+                projectpath: "",
+                category: ["web"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+            {
+                id: "wu1-final",
+                title: "Webbutveckling 1 Final Project",
+                image: "images/wu1-final.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/wu1_towa/tree/master",
+                projectpath: "",
+                category: ["web"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            },
+        ]
     });
 });
 
@@ -70,7 +156,7 @@ app.get('/en', (req, res) => {
 
 app.use((req, res) => {
     const lang = req.cookies.lang || 'en';
-    
+
     res.status(404).render('pages/error', {
         activeLang: lang,
         lang: langFile[lang][404],

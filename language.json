@@ -155,6 +155,8 @@
             }
         },
         "works": {
+            "viewproject": "View Project",
+            "viewcode": "View Code"
         },
         "contact": {
             "sectiontitle": "Contact Info",
@@ -343,6 +345,8 @@
             }
         },
         "works": {
+            "viewproject": "Visa Projekt",
+            "viewcode": "Visa Kod"
         },
         "contact": {
             "sectiontitle": "Kontakt Info",

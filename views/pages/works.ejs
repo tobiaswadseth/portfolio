@@ -40,188 +40,70 @@
             <!-- portfolio filter -->
             <div class="filter-menu content-box">
                 <div class="filters">
-                    <div class="btn-group">
-                        <label data-text="All" class="glitch-effect"><input type="radio" name="fl_radio" value=".box-item">All</label>
-                    </div>
-                    <div class="btn-group">
-                        <label data-text="Web Development"><input type="radio" name="fl_radio" value=".f-web">Web Development</label>
-                    </div>
-                    <div class="btn-group">
-                        <label data-text="Spigot Plugins"><input type="radio" name="fl_radio" value=".f-spigot">Spigot Plugins</label>
-                    </div>
+
+                    <% for (var cat in projectcategories) { %>
+                        <div class="btn-group">
+                            <label data-text="<%= projectcategories[cat]['title_' + activeLang] %>" class="<%= cat === 'box-item' ? 'glitch-effect' : '' %>"><input type="radio" name="fl_radio" value=".<%= projectcategories[cat].value %>"><%= projectcategories[cat]['title_' + activeLang] %></label>
+                        </div>
+                    <% } %>
                 </div>
             </div>
             
             <!-- portfolio items -->
             <div class="box-items portfolio-items">
 
-                <div class="box-item f-spigot">
-                    <div class="image">
-                        <a href="#backpacks" class="has-popup-media hover-animated">
-                            <img src="images\backpack.jpg" class="wp-post-image" alt="">
-                            <span class="info circle">
-                                <span class="centrize full-width">
-                                    <span class="vertical-center">
-                                        <span class="icon fas fa-plus"></span>
-                                        <span class="desc">
-                                            <span class="category">Spigot Plugin</span>
-                                            <span class="name">Backpacks</span>
+                <% projects.forEach((project) => { %>
+                    <div class="box-item <%= project.category.join(' ') %>">
+                        <div class="image">
+                            <a href="#<%= project.id %>" class="has-popup-media hover-animated">
+                                <img src="<%= project.image %>" alt="" class="wp-post-image">
+                                <span class="info circle">
+                                    <span class="centrize full-width">
+                                        <span class="vertical-center">
+                                            <span class="icon fas fa-plus"></span>
+                                            <span class="desc">
+                                                <span class="category">
+                                                    <% project.category.forEach((cat) => { %>
+                                                        <%= projectcategories[cat]['title_' + activeLang] %>
+                                                    <% }); %>
+                                                </span>
+                                                <span class="name"><%= project.title %></span>
+                                            </span>
                                         </span>
                                     </span>
                                 </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div id="backpacks" class="popup-box mfp-fade mfp-hide">
-                        <div class="content">
-                            <div class="image" style="background-image: url(images/backpack.jpg);"></div>
-                            <div class="desc single-post-text">
-                                <div class="category">Spigot Plugin</div>
-                                <h4>Backpacks</h4>
-                                <a href="https://www.spigotmc.org/resources/backpacks.80583/" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Project</span>
-                                </a>
+                            </a>
+                        </div>
+                        <div id="<%= project.id %>" class="popup-box mfp-fade mfp-hide">
+                            <div class="content">
+                                <div class="image" style="background-image: url(<%= project.image %>);"></div>
+                                <div class="desc single-post-text">
+                                    <div class="category">
+                                        <% project.category.forEach((cat) => { %>
+                                            <%= projectcategories[cat]['title_' + activeLang] %>
+                                        <% }); %>
+                                    </div>
+                                    <h4><%= project.title %></h4>
+                                    <% if (project.description !== "") { %>
+                                        <p><%= project[activeLang].description %></p>
+                                    <% } %>
+                                    <% if (project.projectpath !== "") { %>
+                                        <a class="btn hover-animated" href="<%= project.projectpath %>">
+                                            <span class="circle"></span>
+                                            <span class="lnk"><%= lang.viewproject %></span>
+                                        </a>
+                                    <% } %>
+                                    <% if (project.sourcecode !== "") { %>
+                                        <a class="btn hover-animated" href="<%= project.sourcecode %>">
+                                            <span class="circle"></span>
+                                            <span class="lnk"><%= lang.viewcode %></span>
+                                        </a>
+                                    <% } %>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="box-item f-spigot">
-                    <div class="image">
-                        <a href="#chatlink" class="has-popup-media hover-animated">
-                            <img src="images\link.jpg" class="wp-post-image" alt="">
-                            <span class="info circle">
-                                <span class="centrize full-width">
-                                    <span class="vertical-center">
-                                        <span class="icon fas fa-plus"></span>
-                                        <span class="desc">
-                                            <span class="category">Spigot Plugin</span>
-                                            <span class="name">ChatLink</span>
-                                        </span>
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div id="chatlink" class="popup-box mfp-fade mfp-hide">
-                        <div class="content">
-                            <div class="image" style="background-image: url(images/link.jpg);"></div>
-                            <div class="desc single-post-text">
-                                <div class="category">Spigot Plugin</div>
-                                <h4>ChatLink</h4>
-                                <a href="https://www.spigotmc.org/resources/chatlink.74046/" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Project</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box-item f-spigot">
-                    <div class="image">
-                        <a href="#clearentities" class="has-popup-media hover-animated">
-                            <img src="images\trash.jpg" class="wp-post-image" alt="">
-                            <span class="info circle">
-                                <span class="centrize full-width">
-                                    <span class="vertical-center">
-                                        <span class="icon fas fa-plus"></span>
-                                        <span class="desc">
-                                            <span class="category">Spigot Plugin</span>
-                                            <span class="name">ClearEntities</span>
-                                        </span>
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div id="clearentities" class="popup-box mfp-fade mfp-hide">
-                        <div class="content">
-                            <div class="image" style="background-image: url(images/trash.jpg);"></div>
-                            <div class="desc single-post-text">
-                                <div class="category">Spigot Plugin</div>
-                                <h4>ClearEntities</h4>
-                                <a href="https://www.spigotmc.org/resources/clearentities.80272/" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Project</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box-item f-web">
-                    <div class="image">
-                        <a href="#bitcoin" class="has-popup-media hover-animated">
-                            <img src="images\bitcoin.jpg" class="wp-post-image" alt="">
-                            <span class="info circle">
-                                <span class="centrize full-width">
-                                    <span class="vertical-center">
-                                        <span class="icon fas fa-plus"></span>
-                                        <span class="desc">
-                                            <span class="category">Web Development</span>
-                                            <span class="name">Bitcoin Clicker</span>
-                                        </span>
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div id="bitcoin" class="popup-box mfp-fade mfp-hide">
-                        <div class="content">
-                            <div class="image" style="background-image: url(images/bitcoin.jpg);"></div>
-                            <div class="desc single-post-text">
-                                <div class="category">Web Development</div>
-                                <h4>Bitcoin Clicker</h4>
-                                <a href="/bitcoin/" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Project</span>
-                                </a>
-                                <a href="https://github.com/tobiaswadseth/tobiaswadseth.github.io/tree/master/bitcoin" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Code</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box-item f-web">
-                    <div class="image">
-                        <a href="#wu1-final" class="has-popup-media hover-animated">
-                            <img src="images\wu1-final.jpg" class="wp-post-image" alt="">
-                            <span class="info circle">
-                                <span class="centrize full-width">
-                                    <span class="vertical-center">
-                                        <span class="icon fas fa-plus"></span>
-                                        <span class="desc">
-                                            <span class="category">Web Development</span>
-                                            <span class="name">Webbutveckling 1 Final Project</span>
-                                        </span>
-                                    </span>
-                                </span>
-                            </span>
-                        </a>
-                    </div>
-                    <div id="wu1-final" class="popup-box mfp-fade mfp-hide">
-                        <div class="content">
-                            <div class="image" style="background-image: url(images/wu1-final.jpg);"></div>
-                            <div class="desc single-post-text">
-                                <div class="category">Web Development</div>
-                                <h4>Webbutveckling 1 Final Project</h4>
-                                <a href="/wu1-final/" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Project</span>
-                                </a>
-                                <a href="https://github.com/tobiaswadseth/wu1_towa/tree/master" class="btn hover-animated">
-                                    <span class="circle"></span>
-                                    <span class="lnk">View Code</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% }); %>
 
             </div>
 
