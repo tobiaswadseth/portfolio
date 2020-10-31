@@ -1,0 +1,97 @@
+/*=================================================================*/
+/*                      Responsiv
+/*=================================================================*/
+@media only screen and (min-width: 575px) and (max-width: 991px) {
+	.portfolio-item {
+	    margin: 10px 0;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#cursor {
+		display: none !important;
+	}
+	header {
+		.menu-icon {
+			position: relative;
+			left: auto;
+		}
+	}
+	.container-padding {
+	    padding-left: 15px;
+	    padding-right: 15px;
+	}
+	.overlay-menu {
+		.close-icon {
+			position: relative;
+			left: auto;
+		}
+		.vertical-menu {
+			li {
+				a {
+					font-size: 20px;
+				}
+				.switch {
+					font-size: 20px;
+					top: 10px;
+				}
+			}
+			.submenu {
+				li {
+					a {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.home-text {
+	    margin: 80px 0;
+	}
+	.portfolio-single .title {
+	    margin-bottom: 60px;
+	    margin-top: 60px;
+	}
+	.portfolio-single .portfolio-info {
+	    margin-bottom: 60px;
+	}
+	.portfolio-single .portfolio-info .item {
+	    display: block;
+	    text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.portfolio-item {
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.blog-content {
+	    margin: 120px 0;
+	}
+	.page-header {
+	    padding-top: 120px;
+	    padding-bottom: 120px;
+	}
+	.home-portfolio {
+		.grid-item:nth-child(2) {
+			margin-top: 0;
+		}
+	}
+	.parallax-bg {
+	    height: 300px;
+	}
+	article.blog-item footer, article.blog-item header, article.blog-item.is-single .content {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+	.portfolio-single .navigation a {
+	    font-size: 16px;
+	}
+	.portfolio-single .navigation a i {
+		font-size: 20px;
+	}
+}

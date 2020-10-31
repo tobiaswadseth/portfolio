@@ -1,0 +1,239 @@
+/*=================================================================*/
+/*                     Animationer
+/*=================================================================*/
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(3, 3, 3);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* === Formulär === */
+form {
+    .row {
+        margin: 0;
+    }
+    .column {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: -1px;
+        margin-bottom: -1px;
+    }
+    .btn {
+        margin-top: 30px;
+        margin-left: -1px;
+    }
+    .btn.disabled {
+        opacity: 1;
+    }
+    .help-block.with-errors {
+        position: absolute;
+        top: 2px;
+        font-size: 10px;
+        left: 45px;
+        color: red;
+        ul {
+            margin: 0;
+            li {
+                padding: 0;
+                &:before {
+                    content: '';
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.form-control {
+    display: block;
+    border-radius: 0;
+    width: 100%;
+    height: 60px;
+    padding: 29px 44px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #111;
+    background-color: #FFF;
+    background-image: none;
+    border: solid 1px #EEE;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #EEE;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #888;
+}
+.form-control::-moz-placeholder {
+    color: #888;
+}
+.form-control:-ms-input-placeholder {
+    color: #888;
+}
+.form-control:-moz-placeholder {
+    color: #888;
+}
+
+/* === Alert === */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+    position: relative;
+    top: 0;
+    right: 0;
+    color: inherit;
+}
+
+/* === Pagination === */
+nav.pagination-outer {
+    margin-top: 120px;
+}
+.pagination {
+    .page-item {
+        margin: 0 10px;
+    }
+    .page-item.disabled .page-link {
+        color: #111;
+        pointer-events: none;
+        cursor: auto;
+        background-color: transparent;
+        border-color: transparent;
+        &:after {
+            opacity: 1;
+            bottom: -10px;
+        }
+    }
+    .page-link {
+        font-family: $fonthead;
+        font-size: 18px;
+        font-weight: 700;
+        position: relative;
+        display: block;
+        padding: 0;
+        margin-left: 0;
+        line-height: 1.25;
+        color: #111;
+        background-color: transparent;
+        border: 0;
+        &:after {
+            content: '';
+            background: #111;
+            bottom: -20px;
+            left: 0;
+            opacity: 0;
+            display: block;
+            height: 3px;
+            position: absolute;
+            width: 100%;
+            @include transition(.2s);
+        }
+        &:hover {
+            &:after {
+                bottom: -10px;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/*=================================================================*/
+/*                      Övrigt
+/*=================================================================*/
+/* === Go to Top === */
+#return-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 50%;
+    border: solid 2px #111;
+    display: none;
+    z-index: 4;
+    @include transition(.1s);
+}
+
+#return-to-top i {
+    color: #111;
+    margin: 0;
+    position: relative;
+    left: 8.5px;
+    top: 1px;
+    font-size: 20px;
+    @include transition(.1s);
+}
+
+#return-to-top:hover {
+    background: $colorpink;
+    border-color: $colorpink;
+}
+
+#return-to-top:hover i {
+    color: #fff;
+}
+
+// parallaxbilder
+.parallax-bg {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+}

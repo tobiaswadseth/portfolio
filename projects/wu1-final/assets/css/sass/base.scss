@@ -1,0 +1,182 @@
+/*=================================================================*/
+/*                      Bas
+/*=================================================================*/
+body {
+    color: #888;
+    background-color: #fff;
+    font-family: $fontstack;
+    font-size: 16px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.relative {
+    position: relative;
+}
+
+::selection {
+    color: #FFF;
+    background: #111;
+}
+::-moz-selection {
+    color: #FFF;
+    background: #111;
+}
+
+#cursor {
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 3px #111 solid;
+    border-radius: 100%;
+    transition: all 20ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    transition: transform 200ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    pointer-events: none;
+}
+
+/*=================================================================*/
+/*                      Typografi
+/*=================================================================*/
+h1,h2,h3,h4,h5,h6 {
+    color: #111;
+    font-family: $fonthead;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+a {
+    color: $colordefault;
+    outline: 0;
+    @include transition(.2s);
+    &:hover {
+        color: $colorpink;
+        text-decoration: none;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
+p {
+    line-height: 1.7;
+}
+
+.container-padding {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* === Mellanrum === */
+.mt-6 {
+    margin-top: 3.5rem!important
+}
+.mt-7 {
+    margin-top: 4rem!important
+}
+.mt-8 {
+    margin-top: 4.5rem!important
+}
+.mt-9 {
+    margin-top: 5rem!important
+}
+.mt-10 {
+    margin-top: 5.5rem!important
+}
+.mt-11 {
+    margin-top: 6rem!important
+}
+.mt-12 {
+    margin-top: 6.5rem!important
+}
+.mt-13 {
+    margin-top: 7rem!important
+}
+.mt-14 {
+    margin-top: 7.5rem!important
+}
+.mt-15 {
+    margin-top: 8rem!important
+}
+.mb-6 {
+    margin-bottom: 3.5rem!important
+}
+.mb-7 {
+    margin-bottom: 4rem!important
+}
+.mb-8 {
+    margin-bottom: 4.5rem!important
+}
+.mb-9 {
+    margin-bottom: 5rem!important
+}
+.mb-10 {
+    margin-bottom: 5.5rem!important
+}
+.mb-11 {
+    margin-bottom: 6rem!important
+}
+.mb-12 {
+    margin-bottom: 6.5rem!important
+}
+.mb-13 {
+    margin-bottom: 7rem!important
+}
+.mb-14 {
+    margin-bottom: 7.5rem!important
+}
+.mb-15 {
+    margin-bottom: 8rem!important
+}
+
+/* === Listor === */
+.content {
+    ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            &:before {
+                content: '\f284';
+                color: $colorpink;
+                font-family: 'Ionicons';
+                padding-right: 40px;
+            }
+        }
+    }
+}

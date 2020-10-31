@@ -1,0 +1,53 @@
+/*=================================================================*/
+/*                     Knappar
+/*=================================================================*/
+.btn {
+    border-radius: 0;
+    font-family: $fonthead;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    padding: 13px 40px;
+    position: relative;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn-default {
+    color: #FFF;
+    background: $colorpink;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    &:hover {
+        color: #FFF;
+        background: $colordefault;
+
+    }
+}
+
+.btn-full {
+    text-align: center;
+    width: 100%;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    padding: 29px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0;
+}
+
+.btn-sm {
+    padding: 17px 16px;
+    font-size: 12px;
+    line-height: 0;
+}
+
+.btn-xs {
+    padding: 12px 10px;
+    font-size: 12px;
+    line-height: 0;
+}

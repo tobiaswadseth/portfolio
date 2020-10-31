@@ -1,0 +1,230 @@
+/*=================================================================*/
+/*                     NAVIGATION
+/*=================================================================*/
+.navbar {
+	padding: 40px 0 0 0;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+// Meny ikon
+.menu-icon {
+	cursor: pointer;
+    padding-left: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -12.5px;
+    width: 25px;
+	span {
+		display: block;
+		background: #111;
+		height: 5px;
+		width: 5px;
+		@include transition(.1s);
+		&:before {
+			content: '';
+			display: block;
+			background: #111;
+			height: 5px;
+			position: relative;
+		    right: -10px;
+			width: 5px;
+			@include transition(.1s);
+		}
+		&:after {
+			content: '';
+			display: block;
+			background: #111;
+			height: 5px;
+			position: relative;
+		    left: -10px;
+		    top: -5px;
+			width: 5px;
+			@include transition(.1s);
+		}
+		&:nth-child(1) {
+
+		}
+		&:nth-child(2) {
+			margin: 5px 0;
+		}
+		&:nth-child(3) {
+
+		}
+	}
+	&:hover {
+		span:nth-child(2) {
+			margin: 7px 0;
+		}
+		span:before {
+			right: -12px;
+		}
+		span:after {
+			left: -12px;
+		}
+	}
+}
+
+// Overlay meny
+.overlay-menu {
+	position: fixed;
+	height: 100%;
+	visibility: hidden;
+	width: 100%;
+	z-index: 5;
+	&.opened {
+		visibility: visible;
+		&:after {
+			bottom: 0;
+		}
+		.navbar {
+			opacity: 1;
+			visibility: visible;
+			transition-delay: .5s;
+		}
+		.vertical-menu {
+			li {
+				opacity: 1;
+				bottom: 0;
+			}
+		}
+		footer {
+			opacity: 1;
+			margin: 0 0 50px;
+			transition-delay: 1s;
+		}
+	}
+	@for $i from 1 through 10 {
+	    .vertical-menu li:nth-child(#{$i}n) {
+	        transition-delay: #{$i * 0.2}s;
+	    }
+	}
+	&:after {
+		content: '';
+		background: #111;
+		bottom: -100%;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 5;
+		@include transition(.5s);
+	}
+	.navbar {
+		opacity: 0;
+		visibility: hidden;
+		width: 100%;
+		z-index: 6;
+		@include transition(.2s);
+	}
+	.close-icon {
+		color: #FFF;
+		font-size: 30px;
+		cursor: pointer;
+	    position: absolute;
+	    left: 50%;
+	    margin-left: -10px;
+	}
+	footer {
+		opacity: 0;
+		width: 100%;
+		margin: 0 0 40px;
+		z-index: 6;
+		@include transition(.3s);
+	}
+	/* === Vertikal meny === */
+	.vertical-menu {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		width: 100%;
+		z-index: 6;
+	}
+	.vertical-menu li.openmenu>a {
+		color: #FFF;
+	}
+	.vertical-menu li.openmenu .switch {
+		-webkit-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	.vertical-menu li {
+		padding: 4px 0;
+		position: relative;
+		list-style: none;
+		opacity: 0;
+		bottom: -10px;
+		@include transition(.2s);
+	}
+	.vertical-menu li .switch {
+		font-size: 30px;
+		display: inline-block;
+		padding: 0 14px;
+		line-height: 1;
+		cursor: pointer;
+		color: #FFF;
+		position: absolute;
+    	top: 24px;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+		-webkit-backface-visibility: hidden;
+	}
+	.vertical-menu li a {
+		color: #FFF;
+		font-family: $fonthead;
+		font-size: 40px;
+		font-weight: 700;
+		width: 100%;
+		text-decoration: none;
+		position: relative;
+		&:after {
+			content: '';
+			background: #FFF;
+		    width: 0;
+		    height: 5px;
+		    left: 0;
+		    bottom: -10px;
+		    position: absolute;
+		    @include transition(.3s);
+		}
+		&:hover:after {
+			width: 100%;
+			height: 5px;
+		}
+	}
+	.vertical-menu li a:hover {
+		color: #FFF;
+	}
+	/* === Undermeny === */
+
+	.submenu {
+		display: none;
+		padding: 0;
+	}
+	.submenu li a {
+		color: #FFF;
+		font-size: 18px;
+		font-weight: 700;
+		&:after {
+			height: 3px;
+		}
+		&:hover:after {
+			width: 100%;
+			height: 3px;
+		}
+	}
+	.submenu li a:hover {
+		color: #FFF;
+	}
+}

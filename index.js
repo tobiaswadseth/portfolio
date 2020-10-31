@@ -7,6 +7,11 @@ const app = express();
 
 app.use(cookieParser());
 app.use(express.static('./public'));
+
+// Projects
+app.use('/projects/bitcoin-clicker', express.static('./projects/bitcoin-clicker'));
+app.use('/projects/wu1-final', express.static('./projects/wu1-final'));
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -104,8 +109,8 @@ app.get('/works', (req, res) => {
                 id: "bitcoin",
                 title: "Bitcoin Clicker",
                 image: "images/bitcoin.jpg",
-                sourcecode: "",
-                projectpath: "",
+                sourcecode: "https://github.com/tobiaswadseth/bitcoin-clicker/tree/main",
+                projectpath: "/projects/bitcoin-clicker",
                 category: ["web"],
                 en: {
                     description: ""
@@ -119,7 +124,7 @@ app.get('/works', (req, res) => {
                 title: "Webbutveckling 1 Final Project",
                 image: "images/wu1-final.jpg",
                 sourcecode: "https://github.com/tobiaswadseth/wu1_towa/tree/master",
-                projectpath: "",
+                projectpath: "/projects/wu1-final",
                 category: ["web"],
                 en: {
                     description: ""

@@ -1,0 +1,666 @@
+/*=================================================================*/
+/*                      Preloader
+/*=================================================================*/
+#preloader {
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+
+	&.loaded {
+		visibility: hidden;
+
+		.left-side {
+			transform: translateX(-100%);
+			transition-delay: 1s;
+		}
+
+		.right-side {
+			transform: translateX(100%);
+			transition-delay: 1s;
+		}
+
+		.loading-area {
+			opacity: 0;
+		}
+	}
+
+	.left-side,
+	.right-side {
+		background: #111;
+		height: 100%;
+		position: absolute;
+		width: 50%;
+		@include transition(0.6s);
+	}
+
+	.left-side {
+		left: 0;
+	}
+
+	.right-side {
+		right: 0;
+	}
+
+	.loading-area {
+		opacity: 1;
+		position: absolute;
+		width: 50%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		z-index: 1;
+		@include transition(.3s);
+
+		h3 {
+			color: #FFF;
+			font-size: 60px;
+			margin: 0 0 10px;
+		}
+
+		span {
+			color: #999;
+			font-size: 16px;
+			letter-spacing: 0.5em;
+			animation-name: flash;
+			-webkit-animation-delay: 0.5s;
+			-moz-animation-delay: 0.5s;
+			animation-delay: 0.5s;
+			-webkit-animation-duration: 2.85s;
+			-moz-animation-duration: 2.85s;
+			animation-duration: 2.85s;
+			-webkit-animation-iteration-count: infinite;
+			-moz-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes flash {
+
+			from,
+			50%,
+			to {
+				opacity: 1;
+			}
+
+			25%,
+			75% {
+				opacity: 0.2;
+			}
+		}
+	}
+}
+
+/*=================================================================*/
+/*                      Hem rubrik
+/*=================================================================*/
+.home-text {
+	margin: 180px 0 190px;
+
+	h2 {
+		font-size: 40px;
+		margin: 0 0 20px;
+	}
+
+	span {
+		color: #888;
+		font-size: 20px;
+	}
+}
+
+/*=================================================================*/
+/*                      Portfolio
+/*=================================================================*/
+.home-portfolio {
+	margin-top: -40px;
+
+	.grid-item:nth-child(2) {
+		margin-top: 50px;
+	}
+}
+
+.portfolio-item {
+	margin: 40px 25px;
+	position: relative;
+
+	.hover {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+
+		.info {
+			color: #FFF;
+			height: 100%;
+			padding: 30px;
+			position: relative;
+			z-index: 1;
+
+			a {
+				color: #FFF;
+				text-decoration: none;
+			}
+
+			h3 {
+				margin: 0 0 10px;
+				opacity: 0;
+				position: relative;
+				bottom: -20px;
+				@include transition(.3s);
+
+				a {
+					color: #FFF;
+					text-decoration: none;
+					margin-left: 0;
+					@include transition(.2s);
+
+					&:hover {
+						margin-left: 10px;
+					}
+				}
+			}
+
+			span {
+				color: #B5B5B5;
+				font-size: 14px;
+				opacity: 0;
+				position: relative;
+				bottom: -20px;
+				@include transition(.3s);
+			}
+
+			.icons {
+				font-size: 24px;
+				position: absolute;
+				bottom: 20px;
+				left: 0;
+				width: 100%;
+
+				.more-link {
+					display: inline-block;
+					position: relative;
+					left: 0;
+					line-height: 0;
+					@include transition(.2s);
+
+					&:hover {
+						left: 10px;
+					}
+				}
+
+				i:nth-child(1) {
+					float: left;
+					opacity: 0;
+					transform: scale(0);
+					@include transition(.2s);
+				}
+
+				i:nth-child(2) {
+					cursor: pointer;
+					float: right;
+					opacity: 0;
+					line-height: 0;
+					margin-right: 30px;
+					transform: scale(0);
+					@include transition(.1s);
+				}
+			}
+		}
+
+		.overlay {
+			span {
+				background: #000;
+				opacity: 0;
+				display: block;
+				height: 50%;
+				position: absolute;
+				width: 50%;
+				@include transition(.2s);
+
+				&:nth-child(1) {
+					left: 0;
+					top: 0;
+				}
+
+				&:nth-child(2) {
+					right: 0;
+					top: 0;
+				}
+
+				&:nth-child(3) {
+					left: 0;
+					bottom: 0;
+				}
+
+				&:nth-child(4) {
+					right: 0;
+					bottom: 0;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		.info {
+			h3 {
+				opacity: 1;
+				bottom: 0;
+				transition-delay: .1s;
+			}
+
+			span {
+				opacity: 1;
+				bottom: 0;
+				transition-delay: .3s;
+			}
+
+			.icons {
+				i:nth-child(1) {
+					margin-left: 30px;
+					opacity: 1;
+					transition-delay: .5s;
+					transform: scale(1);
+				}
+
+				i:nth-child(2) {
+					opacity: 1;
+					transform: scale(1);
+					transition-delay: .4s;
+				}
+			}
+		}
+
+		.overlay {
+			span {
+				opacity: .9;
+
+				&:nth-child(2) {
+					transition-delay: .1s;
+				}
+
+				&:nth-child(3) {
+					transition-delay: .3s;
+				}
+
+				&:nth-child(4) {
+					transition-delay: .2s;
+				}
+			}
+		}
+	}
+}
+
+.portfolio-single {
+	.title {
+		margin-bottom: 110px;
+		margin-top: 110px;
+
+		h1 {
+			margin: 0 0 20px;
+		}
+
+		ul {
+			margin-bottom: 0;
+
+			li {
+				padding-top: 0;
+				padding-bottom: 0;
+
+				&:before {
+					content: '';
+					display: none;
+				}
+			}
+		}
+	}
+
+	.portfolio-info {
+		margin-bottom: 110px;
+
+		.item {
+			display: grid;
+
+			h4 {
+				margin: 5px 0 0;
+			}
+
+			span {
+				font-size: 14px;
+			}
+
+			.parent {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.navigation {
+		margin-top: 120px;
+
+		a {
+			font-family: $fonthead;
+			font-size: 20px;
+			font-weight: bold;
+			vertical-align: middle;
+
+			i {
+				font-size: 30px;
+				vertical-align: middle;
+				transform: translateX(0);
+				position: relative;
+			}
+
+			&.prev {
+				i {
+					margin-right: 20px;
+				}
+			}
+
+			&.next {
+				i {
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
+
+// Ladda mer
+.load-more {
+	margin-top: 20px;
+	position: relative;
+
+	button {
+		cursor: pointer;
+		background: transparent;
+		border: 0;
+		vertical-align: middle;
+		font-size: 50px;
+		line-height: 0;
+		outline: 0;
+	}
+}
+
+#infscr-loading {
+	position: absolute;
+	left: 50%;
+	margin-left: -15px;
+	bottom: 10px;
+
+	img {
+		display: none;
+	}
+}
+
+/* Loader */
+.loader {
+	height: 32px;
+	width: 32px;
+	-webkit-animation: loader-1-1 4.8s linear infinite;
+	animation: loader-1-1 4.8s linear infinite;
+}
+
+@-webkit-keyframes loader-1 {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes loader-1 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loader span {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	height: 32px;
+	width: 32px;
+	clip: rect(0, 32px, 32px, 16px);
+	-webkit-animation: loader-2 1.2s linear infinite;
+	animation: loader-2 1.2s linear infinite;
+}
+
+@-webkit-keyframes loader-2 {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(220deg);
+	}
+}
+
+@keyframes loader-2 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(220deg);
+	}
+}
+
+.loader span::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	height: 32px;
+	width: 32px;
+	clip: rect(0, 32px, 32px, 16px);
+	border: 3px solid #111;
+	border-radius: 50%;
+	-webkit-animation: loader-3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+	animation: loader-3 1.2s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+}
+
+@-webkit-keyframes loader-3 {
+	0% {
+		-webkit-transform: rotate(-140deg);
+	}
+
+	50% {
+		-webkit-transform: rotate(-160deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(140deg);
+	}
+}
+
+@keyframes loader-3 {
+	0% {
+		transform: rotate(-140deg);
+	}
+
+	50% {
+		transform: rotate(-160deg);
+	}
+
+	100% {
+		transform: rotate(140deg);
+	}
+}
+
+/*=================================================================*/
+/*                      Botten email (CTA)
+/*=================================================================*/
+.cta {
+	margin-top: 120px;
+
+	h2 {
+		font-size: 36px;
+		margin: 0;
+
+		a {
+			text-decoration: none;
+			position: relative;
+
+			&:after {
+				content: '';
+				background: #111;
+				width: 0;
+				height: 4px;
+				left: 0;
+				bottom: -10px;
+				position: absolute;
+				@include transition(.3s);
+			}
+
+			&:hover {
+				color: #111;
+			}
+
+			&:hover:after {
+				width: 100%;
+				height: 5px;
+			}
+		}
+	}
+
+	span {
+		color: #888;
+		font-size: 16px;
+		display: block;
+		margin-bottom: 14px;
+	}
+}
+
+/*=================================================================*/
+/*                      Footer
+/*=================================================================*/
+footer {
+	margin-top: 120px;
+	margin-bottom: 60px;
+
+	.copyright {
+		font-size: 16px;
+		color: #888;
+	}
+}
+
+/*=================================================================*/
+/*                      Sidhuvud + innehåll
+/*=================================================================*/
+.page-header {
+	padding-top: 180px;
+	padding-bottom: 180px;
+
+	h1 {
+		margin: 0;
+	}
+
+	p {
+		font-size: 18px;
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+}
+
+.content {
+	font-size: 18px;
+}
+
+/*=================================================================*/
+/*                      BLOG
+/*=================================================================*/
+.blog-content {
+	margin: 200px 0;
+}
+
+article.blog-item {
+	margin-bottom: 150px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	header {
+		padding-left: 70px;
+		padding-right: 70px;
+		margin-bottom: 40px;
+
+		.title {
+			margin: 0 0 20px;
+
+			a {
+				text-decoration: none;
+
+				&:hover {
+					color: #111;
+				}
+			}
+		}
+	}
+
+	.meta {
+		font-size: 14px;
+		color: #888;
+		margin-bottom: 0;
+
+		li {
+			a {
+				color: #888;
+
+				&:hover {
+					color: #111;
+					text-decoration: none;
+				}
+			}
+
+			&:before {
+				content: '';
+				padding: 0;
+			}
+
+			&:after {
+				content: '';
+				background: $colorpink;
+				border-radius: 100%;
+				display: inline-block;
+				margin-left: 25px;
+				vertical-align: middle;
+				height: 4px;
+				width: 4px;
+			}
+
+			&.list-inline-item:not(:last-child) {
+				margin-right: 25px;
+			}
+
+			&:last-child {
+				&:after {
+					content: '';
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.is-single {
+		.content {
+			font-size: 18px;
+			padding-left: 70px;
+			padding-right: 70px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+	}
+}
