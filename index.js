@@ -12,7 +12,6 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     const lang = req.cookies.lang || 'en';
-    console.log(langFile[lang].index)
     res.render('pages/home', {
         activeLang: lang,
         lang: langFile[lang].index,
