@@ -201,6 +201,20 @@ app.get('/works', (req, res) => {
                     description: ""
                 }
             },
+            {
+                id: "discordbot",
+                title: "Discord Moderation Bot",
+                image: "images/modbot.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/discordbot",
+                projectpath: "",
+                category: ["javascript"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
+            }
         ]
     });
 });
