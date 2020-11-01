@@ -2,8 +2,11 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const langFile = require('./language.json');
+const enforce = require('express-sslify');
 
 const app = express();
+
+app.use(enforce.HTTPS());
 
 app.use(cookieParser());
 app.use(express.static('./public'));
