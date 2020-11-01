@@ -63,9 +63,10 @@
                                             <span class="icon fas fa-plus"></span>
                                             <span class="desc">
                                                 <span class="category">
-                                                    <% project.category.forEach((cat) => { %>
-                                                        <%= projectcategories[cat]['title_' + activeLang] %>
-                                                    <% }); %>
+                                                    <% var cats = ''; project.category.forEach((cat) => { %>
+                                                        <% cats += projectcategories[cat]['title_' + activeLang] + ', '; %>
+                                                    <% }); cats = cats.substring(0, cats.length- 2); %>
+                                                    <%= cats %> 
                                                 </span>
                                                 <span class="name"><%= project.title %></span>
                                             </span>
@@ -79,9 +80,7 @@
                                 <div class="image" style="background-image: url(<%= project.image %>);"></div>
                                 <div class="desc single-post-text">
                                     <div class="category">
-                                        <% project.category.forEach((cat) => { %>
-                                            <%= projectcategories[cat]['title_' + activeLang] %>
-                                        <% }); %>
+                                        <%= cats %> 
                                     </div>
                                     <h4><%= project.title %></h4>
                                     <% if (project.description !== "") { %>
