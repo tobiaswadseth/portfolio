@@ -72,6 +72,11 @@ app.get('/works', (req, res) => {
                 title_en: "Javascript",
                 title_se: "Javascript",
                 value: "javascript"
+            },
+            research: {
+                title_en: "Research",
+                title_se: "Undersökning",
+                value: "research"
             }
         },
         projects: [
@@ -214,6 +219,20 @@ app.get('/works', (req, res) => {
                 se: {
                     description: ""
                 }
+            },
+            {
+                id: "gymnasiearbete",
+                title: "Gymnasiearbete",
+                image: "images/research.png",
+                sourcecode: "",
+                projectpath: "/files/gymnasiearbete",
+                category: ["research"],
+                en: {
+                    description: "This document is written in Swedish"
+                },
+                se: {
+                    description: "Detta dokument är skrivet på Svenska"
+                }
             }
         ]
     });
@@ -230,9 +249,13 @@ app.get('/contact', (req, res) => {
     });
 });
 
-app.get('/download-cv', (req, res) => {
-    res.download(path.join(__dirname, '/CV.pdf'));
-}); 
+app.get('/files/:file', (req, res) => {
+    if (req.params.file === 'cv') {
+        res.sendFile(path.join(__dirname, '/files/CV.pdf'));
+    } else if (req.params.file === 'gymnasiearbete') {
+        res.sendFile(path.join(__dirname, '/files/Gymnasiearbete R.L. T.W..pdf'));
+    }
+});
 
 app.get('/se', (req, res) => {
     res.cookie('lang', 'se', { expire: (2592 * (10^6)) + Date.now() });
@@ -266,31 +289,6 @@ app.use((req, res) => {
         page: '500'
     });
 });
-
-// const views = ['index', 'contact', 'resume', 'works', '404'];
-
-// app.get('/:lang?/:view?/:project?', (req, res) => {
-//     let lang = req.params.lang || 'en';
-//     const view = req.params.view || 'index';
-    
-//     if (!req.params.lang) {
-//         res.redirect('/en/');
-//         return;
-//     }
-
-//     if (!views.includes(view)) {
-//         res.redirect(`/${lang}/404`);
-//         return;
-//     }
-
-//     if (lang === 'sv') {
-//         res.render(__dirname + `/static/${view}-se`);
-//         return;
-//     } else {
-//         lang = 'en';
-//         res.render(__dirname + `/static/${view}-en`);
-//     }
-// });
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));
