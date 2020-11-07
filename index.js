@@ -233,6 +233,20 @@ app.get('/works', (req, res) => {
                 se: {
                     description: "Detta dokument är skrivet på Svenska"
                 }
+            },
+            {
+                id: "portfolio",
+                title: "Portfolio",
+                image: "images/portfolio.jpg",
+                sourcecode: "https://github.com/tobiaswadseth/portfolio",
+                projectpath: "/",
+                category: ["web", "javascript"],
+                en: {
+                    description: ""
+                },
+                se: {
+                    description: ""
+                }
             }
         ]
     });
