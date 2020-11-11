@@ -88,10 +88,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["spigot", "java"],
                 en: {
-                    description: ""
+                    description: "A plugin for Minecraft servers to allow for backpacks"
                 },
                 se: {
-                    description: ""
+                    description: "Ett plugin till Minecraft servrar som tillägger ryggsäckar"
                 }
             },
             {
@@ -102,10 +102,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["spigot", "java"],
                 en: {
-                    description: ""
+                    description: "A plugin for Minecraft servers that allows for players to showcase their items in the chat"
                 },
                 se: {
-                    description: ""
+                    description: "Ett plugin till Minecraft servrar som tillåter spelare att visa sina saker i chatten"
                 }
             },
             {
@@ -116,10 +116,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["spigot", "java"],
                 en: {
-                    description: ""
+                    description: "A plugin for Minecraft servers that removes all entities in a world on a set interval to ease the lag"
                 },
                 se: {
-                    description: ""
+                    description: "Ett plugin till Minecraft servrar som tar bort alla enheter i en värld på en satt intervall fär att underlätta lagg"
                 }
             },
             {
@@ -130,10 +130,10 @@ app.get('/works', (req, res) => {
                 projectpath: "/projects/bitcoin-clicker",
                 category: ["web", "javascript"],
                 en: {
-                    description: ""
+                    description: "A Cookie Clicker clone but with a bitcoin frontend"
                 },
                 se: {
-                    description: ""
+                    description: "En Cookie Clicker klon fast med ett utseende som skall likna bitcoin"
                 }
             },
             {
@@ -144,10 +144,10 @@ app.get('/works', (req, res) => {
                 projectpath: "/projects/wu1-final",
                 category: ["web"],
                 en: {
-                    description: ""
+                    description: "My final project in the course \"Web development 1\" at school"
                 },
                 se: {
-                    description: ""
+                    description: "Mitt slutprojekt i kursen \"Webbutveckling 1\" på gymnasiet"
                 }
             },
             {
@@ -158,10 +158,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["web", "javascript"],
                 en: {
-                    description: ""
+                    description: "A very simple URL shortener built using nodejs and vue"
                 },
                 se: {
-                    description: ""
+                    description: "En väldigt simpel URL förkortare som är byggd med nodejs och vue"
                 }
             },
             {
@@ -172,10 +172,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["web", "javascript"],
                 en: {
-                    description: ""
+                    description: "A WYSIWYG editor (What You See Is What You Get) that allows for editing text in real-time"
                 },
                 se: {
-                    description: ""
+                    description: "En WYSIWYG redigerare (What You See Is What You Get) som tillåter för redigering av text i real-tid"
                 }
             },
             {
@@ -186,10 +186,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["java"],
                 en: {
-                    description: ""
+                    description: "A project in the course \"Java basics\" at school. A GUI application that allows for booking movie tickets"
                 },
                 se: {
-                    description: ""
+                    description: "Ett projekt i kursen \"Java grunder\" på högskolan. En GUI applikation som tillåter användaren att boka bio biljetter"
                 }
             },
             {
@@ -200,10 +200,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["web", "javascript"],
                 en: {
-                    description: ""
+                    description: "A chat application built using nodejs, reactjs, and firebase"
                 },
                 se: {
-                    description: ""
+                    description: "En chatt applikation som är byggd med nodejs, reactjs och firebase"
                 }
             },
             {
@@ -214,10 +214,10 @@ app.get('/works', (req, res) => {
                 projectpath: "",
                 category: ["javascript"],
                 en: {
-                    description: ""
+                    description: "A discord moderation bot built using nodejs and the discord bot api"
                 },
                 se: {
-                    description: ""
+                    description: "En discord modererings bott som är byggd med nodejs och discord bott api"
                 }
             },
             {
@@ -228,10 +228,10 @@ app.get('/works', (req, res) => {
                 projectpath: "/files/gymnasiearbete",
                 category: ["research"],
                 en: {
-                    description: "This document is written in Swedish"
+                    description: "A research project for school. <br><strong>This document is written in Swedish</strong>"
                 },
                 se: {
-                    description: "Detta dokument är skrivet på Svenska"
+                    description: "Ett undersöknings projekt på gymnasiet. <br><strong>Detta dokument är skrivet på Svenska</strong>"
                 }
             },
             {
@@ -242,10 +242,10 @@ app.get('/works', (req, res) => {
                 projectpath: "/",
                 category: ["web", "javascript"],
                 en: {
-                    description: ""
+                    description: "This website (My web based portfolio) on GitHub"
                 },
                 se: {
-                    description: ""
+                    description: "Den här webbplatsen (Mitt webb baserade portfolio) på GitHub"
                 }
             }
         ]
