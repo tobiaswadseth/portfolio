@@ -74,7 +74,7 @@ app.use(cookieSession({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: process.env.SESSIONSECRET, resave: false, saveUninitialized: false }));
+// app.use(session({ secret: process.env.SESSIONSECRET, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
