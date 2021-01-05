@@ -47,6 +47,7 @@ passport.deserializeUser((obj, done) => {
 });
 
 const BASE_URL = process.env.ENVIRONMENT === 'PRODUCTION' ? 'https://tobiaswadseth.com' : 'http://127.0.0.1:3000';
+console.log(BASE_URL);
 
 passport.use(new GitHubStrategy({
     clientID: process.env.ENVIRONMENT === 'PRODUCTION' ? process.env.GITHUBCLIENTID : process.env.GITHUBCLIENTIDLOCAL,
@@ -74,7 +75,7 @@ app.use(cookieSession({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(session({ secret: process.env.SESSIONSECRET, resave: false, saveUninitialized: false }));
+app.use(session({ secret: process.env.SESSIONSECRET, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
