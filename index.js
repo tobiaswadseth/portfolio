@@ -5,7 +5,7 @@ const langFile = require('./language.json');
 
 const app = express();
 
-
+// TODO: Add admin panel and switch to db storage for portfolio items and language
 
 app.use(cookieParser());
 app.use(express.static('./public'));
