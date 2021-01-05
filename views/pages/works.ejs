@@ -41,11 +41,11 @@
             <div class="filter-menu content-box">
                 <div class="filters">
 
-                    <% for (var cat in projectcategories) { %>
+                    <% projectcategories.forEach((category) => { %>
                         <div class="btn-group">
-                            <label data-text="<%= projectcategories[cat]['title_' + activeLang] %>" class="<%= cat === 'box-item' ? 'glitch-effect' : '' %>"><input type="radio" name="fl_radio" value=".<%= projectcategories[cat].value %>"><%= projectcategories[cat]['title_' + activeLang] %></label>
+                            <label data-text="<%= category['title_' + activeLang] %>" class="<%= category.value === 'box-item' ? 'glitch-effect' : '' %>"><input type="radio" name="fl_radio" value=".<%= category.value %>"><%= category['title_' + activeLang] %></label>
                         </div>
-                    <% } %>
+                    <% }); %>
                 </div>
             </div>
             
@@ -63,9 +63,17 @@
                                             <span class="icon fas fa-plus"></span>
                                             <span class="desc">
                                                 <span class="category">
-                                                    <% var cats = ''; project.category.forEach((cat) => { %>
-                                                        <% cats += projectcategories[cat]['title_' + activeLang] + ', '; %>
-                                                    <% }); cats = cats.substring(0, cats.length- 2); %>
+                                                    <% 
+                                                    var cats = '';
+                                                    project.category.forEach((cat) => {
+                                                        projectcategories.forEach((projcat) => {
+                                                            if (cat == projcat.value) {
+                                                                cats += projcat['title_' + activeLang] + ', ';
+                                                            }
+                                                        });
+                                                    });
+                                                    cats = cats.substring(0, cats.length - 2);
+                                                    %>
                                                     <%= cats %> 
                                                 </span>
                                                 <span class="name"><%= project.title %></span>
@@ -77,7 +85,7 @@
                         </div>
                         <div id="<%= project.id %>" class="popup-box mfp-fade mfp-hide">
                             <div class="content">
-                                <div class="image" style="background-image: url(<%= project.image %>);"></div>
+                                <div class="image" style="background-image: url(<%=project.image%>);"></div>
                                 <div class="desc single-post-text">
                                     <div class="category">
                                         <%= cats %> 
