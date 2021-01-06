@@ -49,7 +49,6 @@ passport.deserializeUser((obj, done) => {
 });
 
 const BASE_URL = process.env.ENVIRONMENT === 'PRODUCTION' ? 'https://tobiaswadseth.com' : 'http://127.0.0.1:3000';
-console.log(BASE_URL);
 
 passport.use(new GitHubStrategy({
     clientID: process.env.ENVIRONMENT === 'PRODUCTION' ? process.env.GITHUBCLIENTID : process.env.GITHUBCLIENTIDLOCAL,
@@ -182,8 +181,8 @@ app.post('/admin/getlang', ensureAuthenticated, async (req, res) => {
 });
 
 app.post('/admin/updatelang', ensureAuthenticated, async (req, res) => {
-    let enRes = await langDB.findOneAndUpdate({ lang: 'en' }, { $set: req.body.lang.en });
-    let seRes = await langDB.findOneAndUpdate({ lang: 'se' }, { $set: req.body.lang.se });
+    await langDB.findOneAndUpdate({ lang: 'en' }, { $set: req.body.lang.en });
+    await langDB.findOneAndUpdate({ lang: 'se' }, { $set: req.body.lang.se });
     res.json({
         ok: true
     });
