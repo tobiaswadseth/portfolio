@@ -1,0 +1,71 @@
+<%- include('../template/header') -%>
+<!-- Wrapper -->
+<div class="wrapper">
+
+    <!-- Section Started -->
+    <div class="section started section-title" id="section-started">
+
+        <!-- background -->
+        <div class="video-bg">
+            <div class="video-bg-mask"></div>
+            <div class="video-bg-texture" id="grained_container"></div>
+        </div>
+
+        <!-- content start -->
+        <div class="centrize full-width">
+            <div class="vertical-center">
+                <div class="started-content">
+                    <h1 class="h-title"><%- header.nav.language %></h1>
+                    <div class="h-subtitles">
+                        <div class="h-subtitle typing-bread">
+                            <p class="breadcrumbs">
+                                <a href="/"><%- header.nav.home %></a> / <%- header.nav.language %>
+                            </p>
+                        </div>
+                        <span class="typed-bread"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- mouse button -->
+        <a href="#" class="mouse_btn" style="display: none;"><span class="icon fas fa-chevron-down"></span></a>
+
+    </div>
+
+    <!-- Section language -->
+    <div class="section language" id="section-language">
+        <div class="content">
+
+            <!-- title -->
+            <div class="title">
+                <div class="title_inner"><%- lang.sectiontitle %></div>
+            </div>
+
+            <!-- language fields -->
+            <div class="content-box">
+                <form method="POST" id="lang-form">
+                    <div>
+                        <span>
+                            <textarea name="en" id="lang-en" cols="40" rows="10"></textarea>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <textarea name="se" id="lang-se" cols="40" rows="10"></textarea>
+                        </span>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn hover-animated">
+                            <span class="circle"></span>
+                            <span class="lnk"><%- lang.save %></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<%- include('../template/footer') -%>

@@ -75,6 +75,26 @@
 								<li class="menu-item <%= page == 'contact' ? 'current-menu-item' : ''; %>">
 									<a href="/contact"><%- header.nav.contact %></a>
 								</li>
+								<% if (user) { %>
+									<li class="menu-item menu-item-has-children <%= page == 'admin-language' || page == 'admin-projects' ? 'current-menu-item' : ''; %>">
+										<a href="/admin/language"><%- header.nav.admin %></a>
+										<ul class="sub-menu">
+											<li class="menu-item <%= page == 'admin-language' ? 'current-menu-item' : ''; %>">
+												<a href="/admin/language"><%- header.nav.language %></a>
+											</li>
+											<li class="menu-item <%= page == 'admin-projects' ? 'current-menu-item' : ''; %>">
+												<a href="/admin/projects"><%- header.nav.projects %></a>
+											</li>
+										</ul>
+									</li>
+									<li class="menu-item">
+										<a href="/logout"><%- header.nav.logout %></a>
+									</li>
+								<% } else { %>
+									<li class="menu-item">
+										<a href="/login"><%- header.nav.login %></a>
+									</li>
+								<% } %>
 							</ul>
 						</div>
 					</div>

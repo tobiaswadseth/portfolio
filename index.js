@@ -9,8 +9,6 @@ const cookieSession = require('cookie-session');
 
 const monk = require('monk');
 
-const langFile = require('./language.json');
-
 const app = express();
 
 const path = require('path');
@@ -28,6 +26,10 @@ const portcatsDB = db.get('portcats');
 
 const getLangFile = async (langKey) => {
     return await langDB.findOne({ lang: langKey }, {});
+}
+
+const getLangFiles = async () => {
+    return await langDB.find({},{});
 }
 
 const getProjects = async () => {
@@ -155,18 +157,9 @@ app.get('/files/:file', (req, res) => {
 });
 
 // Admin
-// TODO: Add admin panel and switch to db storage for portfolio items and language
 
-app.get('/login', ensureNotAuthenticated, async (req, res) => {
-    const langFile = await getLangFile(req.cookies.lang || 'en');
-    res.render('admin/pages/login', {
-        activeLang: langFile.lang,
-        lang: langFile.resume,
-        header: langFile.header,
-        footer: langFile.footer,
-        page: 'login',
-        user: req.user
-    })
+app.get('/login', ensureNotAuthenticated, (req, res) => {
+    res.redirect('/auth/github');
 });
 
 app.get('/logout', ensureAuthenticated, (req, res) => {
@@ -174,35 +167,73 @@ app.get('/logout', ensureAuthenticated, (req, res) => {
     res.redirect('/');
 });
 
-app.get('/admin', ensureAuthenticated, async (req, res) => {
-    const langFile = await getLangFile(req.cookies.lang || 'en');
-    res.render('admin/pages/home', {
-        activeLang: langFile.lang,
-        lang: langFile.resume,
-        header: langFile.header,
-        footer: langFile.footer,
-        page: 'admin',
-        user: req.user
-    })
+app.post('/admin/getlang', ensureAuthenticated, async (req, res) => {
+    const langFiles = await getLangFiles();
+    if (langFiles) {
+        res.json({
+            ok: true,
+            lang: langFiles
+        });
+    } else {
+        res.json({
+            ok: false
+        });
+    }
 });
 
-app.get('/admin/portfolio', ensureAuthenticated, async (req, res) => {
+app.post('/admin/updatelang', ensureAuthenticated, async (req, res) => {
+    let enRes = await langDB.findOneAndUpdate({ lang: 'en' }, { $set: req.body.lang.en });
+    let seRes = await langDB.findOneAndUpdate({ lang: 'se' }, { $set: req.body.lang.se });
+    res.json({
+        ok: true
+    });
+});
+
+app.post('/admin/getprojects', ensureAuthenticated, async (req, res) => {
+    const cats = await getCats();
+    const projects = await getProjects();
+    if (cats && projects) {
+        res.json({
+            ok: true,
+            cats,
+            projects
+        });
+    } else {
+        res.json({
+            ok: false
+        });
+    }
+});
+
+app.post('/admin/updateprojects', ensureAuthenticated, async (req, res) => {
+    req.body.projects.cats.forEach(async (cat) => {
+        await portcatsDB.findOneAndUpdate({ _id: cat['_id'] }, { $set: cat });
+    });
+    req.body.projects.projects.forEach(async (project) => {
+        await portDB.findOneAndUpdate({ _id: project['_id'] }, { $set: project })
+    })
+    res.json({
+        ok: true
+    });
+});
+
+app.get('/admin/projects', ensureAuthenticated, async (req, res) => {
     const langFile = await getLangFile(req.cookies.lang || 'en');
-    res.render('admin/pages/portfolio', {
+    res.render('pages/projects', {
         activeLang: langFile.lang,
-        lang: langFile.resume,
+        lang: langFile.projects,
         header: langFile.header,
         footer: langFile.footer,
-        page: 'admin-portfolio',
+        page: 'admin-projects',
         user: req.user
     })
 });
 
 app.get('/admin/language', ensureAuthenticated, async (req, res) => {
     const langFile = await getLangFile(req.cookies.lang || 'en');
-    res.render('admin/pages/language', {
+    res.render('pages/language', {
         activeLang: langFile.lang,
-        lang: langFile.resume,
+        lang: langFile.language,
         header: langFile.header,
         footer: langFile.footer,
         page: 'admin-language',
@@ -214,10 +245,6 @@ app.get('/auth/github', ensureNotAuthenticated && passport.authenticate('github'
 
 app.get('/auth/github/callback', ensureNotAuthenticated && passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
     res.redirect('/');
-});
-
-app.post('/admin/portfolio/update', ensureAuthenticated, async (req, res) => {
-
 });
 
 // Lang and errors
@@ -240,7 +267,8 @@ app.use(async (req, res) => {
         lang: langFile[404],
         header: langFile.header,
         footer: langFile.footer,
-        page: '404'
+        page: '404',
+        user: req.user
     });
 });
 
@@ -252,7 +280,8 @@ app.use(async (req, res) => {
         lang: langFile[500],
         header: langFile.header,
         footer: langFile.footer,
-        page: '500'
+        page: '500',
+        user: req.user
     });
 });
 
